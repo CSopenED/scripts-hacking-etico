@@ -1,0 +1,46 @@
+KIT DE SCRIPTS DE HACKING ETICO (macOS)
+=======================================
+
+Haz doble clic en cualquier archivo .command y se abrira en el Terminal.
+
+RECONOCIMIENTO (sobre tus propios activos)
+  01_auditor_cabeceras.command        Nota A-F de las cabeceras de seguridad de una web
+  02_escaner_puertos.command          Escaner de puertos con banners
+  06_resumen_dominio.command          DNS, SPF, DMARC y WHOIS de un dominio
+  09_enumerador_subdominios.command   Subdominios via certificate transparency (crt.sh)
+
+DEFENSA Y ANALISIS
+  03_honeypot.command                 Puerto trampa que registra quien conecta
+  04_comprobar_password.command       Fortaleza + filtraciones (Have I Been Pwned)
+  07_monitor_integridad.command       Detecta archivos modificados, nuevos o borrados
+  10_analizador_logs.command          Detecta fuerza bruta en logs SSH / Apache
+
+FORENSE Y OSINT (sobre tus propios datos)
+  05_metadatos.command                Metadatos de fotos/archivos (GPS, camara, autor)
+  11_huella_digital.command           Informe HTML de tu huella digital (usuario)
+
+LABORATORIO Y CTF
+  08_decodificador_ctf.command        Base64, hex, ROT13, Cesar, identificar hashes
+  12_cracker_hashes.command           Identifica el tipo de hash y prueba un diccionario
+  13_fuzzer_directorios.command       Busca rutas y archivos sensibles en una web
+
+REQUISITOS
+  - macOS con Python 3. Si no lo tienes, el Mac ofrecera instalar las
+    "Herramientas de linea de comandos" la primera vez: aceptalo.
+  - Internet para los scripts 01, 04, 06, 09, 11 y 13.
+  - Opcional: brew install exiftool (para ver mas metadatos en el 05).
+
+SI macOS NO DEJA ABRIRLOS (primera vez)
+  Opcion A: clic derecho sobre el archivo > Abrir > Abrir.
+  Opcion B: en el Terminal, dentro de la carpeta del kit:
+      xattr -dr com.apple.quarantine .
+      chmod +x *.command
+
+USO RESPONSABLE
+  Usa estas herramientas solo en tus equipos, tus redes y tus dominios, o
+  con autorizacion expresa por escrito. Acceder a sistemas ajenos sin permiso
+  es delito. Para practicar: TryHackMe, Hack The Box, DVWA, Juice Shop.
+
+  09 (subdominios) y 11 (huella digital) consultan solo registros publicos
+  (certificados, DNS, si una URL de perfil responde). No acceden a cuentas
+  ni a datos privados. Usalos sobre tus propios dominios/usuarios.
